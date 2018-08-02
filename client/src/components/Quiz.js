@@ -17,6 +17,7 @@ class Quiz extends React.Component{
         </div>
       </Link>
     });
+
     return(
         <div>
         <div className="content">
@@ -28,7 +29,7 @@ class Quiz extends React.Component{
           >
             <span>taisyklės</span>
             <div className="text">
-Žaidimo tikslas yra, palaipsniui sunkėjant sudėtingumui, kiekviename lygyje pasirinkti 5 iš bendro konteksto išsiskiriančias spalvas.
+Žaidimo tikslas - palaipsniui sunkėjant sudėtingumui, kiekviename lygyje pasirinkti 5 iš bendro konteksto išsiskiriančias spalvas.
             Pasirinkus mažiau už 5 ar pasirinkus bent vieną netinkamą, žaidėjas pralaimi.
             </div>
           </div>
