@@ -1,10 +1,14 @@
 import React from 'react';
 import {connect} from 'react-redux';
 import {Link} from 'react-router-dom';
+//import axios from 'axios';
+//import * as actions from "../actions/user";
 
 
 class Content extends React.Component{
-  render(){
+
+
+  render() {
     const colours=this.props.colours.colours.map((colour,i)=>{
       return <Link
           to={`/array/${colour.colour}`}
@@ -17,6 +21,7 @@ class Content extends React.Component{
         </div>
       </Link>
     });
+
     return(
         <div>
         <h1 className="main-logo">colour selector</h1>
@@ -29,7 +34,9 @@ class Content extends React.Component{
 }
 
 const mapStateToProps=(state)=>{
-  return{colours:state.colours}
+  return{colours:state.colours,
+          user:state.user
+  }
 };
 
 const mapDispatchToProps=(dispatch)=>{

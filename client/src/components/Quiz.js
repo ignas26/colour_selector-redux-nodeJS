@@ -4,6 +4,13 @@ import {Link} from 'react-router-dom';
 
 
 class Quiz extends React.Component{
+
+  componentWillMount(){
+    //let token = localStorage.getItem('token');
+    //if(!this.props.user.name && !token) this.props.history.push('/login')
+    if(!this.props.user.name) this.props.history.push('/login');
+  }
+
   render(){
     const colours=this.props.colours.colours.map((colour,i)=>{
       return <Link
@@ -41,7 +48,10 @@ class Quiz extends React.Component{
 }
 
 const mapStateToProps=(state)=>{
-  return{colours:state.colours}
+  return{
+    colours:state.colours,
+    user:state.user
+  }
 };
 
 const mapDispatchToProps=(dispatch)=>{

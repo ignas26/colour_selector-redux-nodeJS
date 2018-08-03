@@ -1,7 +1,7 @@
 import React from 'react';
 import {BrowserRouter, Switch, Route} from 'react-router-dom';
-//import jwt from 'jsonwebtoken';
 import Header from './components/Header';
+import LoggedOut from './components/LoggedOut';
 import Content from './components/Content';
 import Array from './components/Array';
 import Quiz from './components/Quiz';
@@ -13,18 +13,11 @@ import page404 from './components/404';
 
 class AppRoutes extends React.Component{
 
-  // componentWillMount() {
-  //   const token = localStorage.getItem('token');
-  //   if (!token) return;
-  //   const user = jwt.decode(token.split(' ')[1]);
-  //   console.log(user);
-  //   if (user) this.props.setUser(user);
-  // }
-
   render(){
     return(
         <BrowserRouter>
           <div>
+            <LoggedOut/>
             <Header/>
             <Switch>
               <Route path='/' component={Content} exact/>

@@ -2,6 +2,9 @@ import React from 'react';
 import {connect} from 'react-redux';
 
 const Statistics = (props) =>{
+
+  const username = props.user.name;
+
   const results = props.accomplished.map((acc, i)=>{
     const height = 30+10*acc.result;
     return (
@@ -10,7 +13,7 @@ const Statistics = (props) =>{
         style={{backgroundColor: acc.colour,height:`${height}px`}}
         className="bar">
       <p style={{lineHeight:`${height}px`}}>
-        {acc.result===''? 'No result' : `Your level is ${acc.result}`}</p>
+        {acc.result===''? 'No result' : `${username} level is ${acc.result}`}</p>
     </div>
     )
   });
@@ -26,7 +29,9 @@ const Statistics = (props) =>{
 };
 
 const mapStateToProps= (state) =>{
-  return {accomplished:state.accomplished};
+  return {accomplished:state.accomplished,
+  user:state.user
+  };
 };
 
 export default connect(mapStateToProps)(Statistics);

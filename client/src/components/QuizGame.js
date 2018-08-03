@@ -6,27 +6,47 @@ import {connect} from 'react-redux';
 class QuizGame extends React.Component {
   state = {
     squares: [],
+    checker:false,
+    clickCount: 0,
     level: 1,
     color: '',
     newValue: []
   };
 
+  componentWillMount(){
+    //let token = localStorage.getItem('token');
+    //if(!this.props.user.name && !token) this.props.history.push('/login')
+    if(!this.props.user.name) this.props.history.push('/login');
+  }
+
   componentDidMount() {
     this.renderSquare();
   }
 
-
   clickHandler = (i) => {
+    this.setState({clickCount:this.state.clickCount + 1});
     const newSquares = this.state.squares;
     newSquares[i][1]=!this.state.squares[i][1];
     this.setState({squares:newSquares});
+    if (this.state.clickCount>3) {this.setState({
+      checker:true
+    })}
   };
 
-
   newLevel = () => {
-
     const newLevel = this.state.level + 1;
     this.setState({level: newLevel});
+    let restart = 0;
+    this.setState({clickCount: restart});
+    this.setState({checker:false});
+    if(!this.props.user.name) this.props.history.push('/login');
+    this.renderSquare();
+  };
+
+  restart = ()=> {
+    let restart = 0;
+    this.setState({clickCount: restart});
+    this.setState({checker:false});
     this.renderSquare();
   };
 
@@ -105,23 +125,32 @@ class QuizGame extends React.Component {
       return (
           <div>
             <h1>Dabartinis lygmuo: {this.state.level}</h1>
+            <div
+                onClick={() => this.restart()}
+                className="refresh-button"
+                style={{backgroundColor: this.props.match.params.colour}}
+            >Refresh picks
+            </div>
             <div className="allBlocks">
               {squares}
             </div>
 
-            <div
+            {this.state.checker && <div
                 onClick={() => this.correctTries()}
                 className="nl-button"
                 style={{backgroundColor: this.props.match.params.colour}}
             >next level
-            </div>
+            </div>}
+
           </div>
       )
     }
 }
 
   const mapStateToProps = (state) => {
-    return {variety: state.variety}
+    return {variety: state.variety,
+    user:state.user
+    }
   };
 
   const mapDispatchToProps = (dispatch) => {
