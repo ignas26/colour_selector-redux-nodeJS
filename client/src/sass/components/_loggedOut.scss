@@ -4,7 +4,7 @@
     display: table;
 }
 
-.logged-in{
+.loggedIn{
     float: right;
     margin: 20px;
     h1{
@@ -18,9 +18,9 @@
     }
 }
 
-.logout{
-    .logout-btn{
-            float: right;
+.loggout{
+    float: right;
+    .loggout-btn{
             display:inline-block;
             padding:0.7em 1.4em;
             margin:55px 0.3em 0.3em 0;
@@ -42,6 +42,25 @@
     }
 }
 
-.message{
+.notLogged-button {
     float: right;
+    button {
+        display: inline-block;
+        padding: 0.7em 1.4em;
+        margin: 35px 0 0.3em 0;
+        border-radius: 0.15em;
+        box-sizing: border-box;
+        text-decoration: none;
+        font-family: 'Roboto', sans-serif;
+        text-transform: uppercase;
+        font-weight: 400;
+        color: #FFF;
+        background-color: deepskyblue;
+        box-shadow: inset 0 -0.6em 0 -0.35em rgba(0, 0, 0, 0.17);
+        text-align: center;
+        position: relative;
+        &:active {
+            top: 0.1em;
+        }
+    }
 }
