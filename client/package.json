@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "proxy": {
     "/api": {
-      "target": "http://localhost:9000"
+      "target": "http://712075.s.dedikuoti.lt:9000"
     }
   },
   "private": true,

@@ -107,7 +107,6 @@ class QuizGame extends React.Component {
 
     const shuffle = _.shuffle(colours);
     this.setState({squares: shuffle});
-    //console.log(this.state.squares);
 
   };
 
