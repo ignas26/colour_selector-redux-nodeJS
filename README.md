@@ -2,7 +2,7 @@ COLOUR-SELECTOR
 
 About the game
 
-   Game where you need to choose not matching colors. There is 25 levels and with leveling complexity is growing. Also there is possibility to track your results. You can play as guest or register & login to save your game process.
+   In every level of this game the player has got to choose exactly 5 (five) colours that vary the rest of the colour block. In the current version of the game there are an infinite amount of levels. Also there is a possibility to track ones results. One can play only after loging in as an admin.
 
 Downloading
 
@@ -18,6 +18,6 @@ Before running the project
    
    Run project
    
-   Launch the project on your local machine on the same port as its given in the App.js file via constant PORT (feel free to adjust manually). Lanuch the project with -npm run dev
+   Launch the project on your local machine on the same port as its given in the server.js file via constant PORT (feel free to adjust manually). Lanuch the project with -npm run dev
 
 
