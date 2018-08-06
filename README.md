@@ -2,7 +2,7 @@ COLOUR-SELECTOR
 
 About the game
 
-   In every level of this game the player has got to choose exactly 5 (five) colours that vary the rest of the colour block. In the current version of the game there are an infinite amount of levels. Also there is a possibility to track ones results. One can play only after loging in as an admin.
+   In every level of this game a player has got to choose exactly 5 (five) colours that vary the rest of the colour block. There are 22 levels available. There's also a possibility to track player's results. One can play only after logging in as an admin.
 
 Downloading
 

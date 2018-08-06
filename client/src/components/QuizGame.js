@@ -66,6 +66,8 @@ class QuizGame extends React.Component {
       return clicks;
     },0);
 
+    if(this.state.level ===22) this.props.history.push('/wingame');
+
       if (guess === 5 && clicked === 5) {
         return this.newLevel();
       } else {
@@ -123,7 +125,7 @@ class QuizGame extends React.Component {
 
       return (
           <div>
-            <h1>Dabartinis lygmuo: {this.state.level}</h1>
+            <h1>Dabartinis lygmuo: <span  style={{color: this.props.match.params.colour}}>{this.state.level}</span></h1>
             <div
                 onClick={() => this.restart()}
                 className="refresh-button"
